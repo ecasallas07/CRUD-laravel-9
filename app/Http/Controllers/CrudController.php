@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB; //Para llamra las librerias que nos permiten 
 class CrudController extends Controller
 {
     public function index(){
-        $datos=DB::select('select * from productos ');
-        return view("welcome");
+        $datos=DB::select('select * from pedidos');
+        return view("welcome")->with("datos",$datos); //enviar a la vista la variable de los datos 
     }
 }
